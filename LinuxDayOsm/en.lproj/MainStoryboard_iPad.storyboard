@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Linux DayOSM View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <viewController id="2" customClass="LinuxDayOSMViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="gQH-H9-6xB" customClass="OSMBrowser">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="16" id="rtw-RK-DC4">
+                                <rect key="frame" x="503" y="20" width="247" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeButtonPressed:" destination="2" eventType="touchDown" id="Mjd-a6-Ieb"/>
+                                    <action selector="changeButtonReleased:" destination="2" eventType="touchUpInside" id="6Tb-NV-8eO"/>
+                                    <action selector="sliderValueChanged:" destination="2" eventType="valueChanged" id="iph-Da-CTV"/>
+                                </connections>
+                            </slider>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Fuc-b9-tWU">
+                                <rect key="frame" x="0.0" y="965" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="icon_italy.png" style="plain" id="v3j-KF-3jZ">
+                                        <connections>
+                                            <action selector="resetView:" destination="2" id="0LS-2w-z12"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="target.png" style="plain" id="OkL-ry-0ty">
+                                        <connections>
+                                            <action selector="goToCurrentLocation:" destination="2" id="emn-9A-x8Z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="osmBrowser" destination="gQH-H9-6xB" id="t1a-em-MCo"/>
+                        <outlet property="zoom" destination="rtw-RK-DC4" id="LBA-iX-fbv"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1410" y="-219"/>
+        </scene>
+        <!--LDDialog-->
+        <scene sceneID="u5l-WN-Y4H">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htT-Tg-dG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="LDDialog" title="Evento" id="CVR-h5-Iyw" userLabel="LDDialog" customClass="LDAlert" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="bUx-j8-kNh">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="behind_alert_view.png" id="Pao-dy-KJb">
+                                <rect key="frame" x="-6" y="0.0" width="780" height="1004"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" id="2kD-eJ-Hvf">
+                                <rect key="frame" x="70" y="43" width="284" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="999" contentMode="scaleToFill" image="alert_background.png" id="R03-8S-d7e">
+                                        <rect key="frame" x="0" y="0" width="293" height="245"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ieX-m7-Fcc">
+                                        <rect key="frame" x="146" y="158" width="93" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Ok" backgroundImage="alert_button.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismiss:" destination="CVR-h5-Iyw" eventType="touchUpInside" id="JHt-Fp-sU5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yIS-hc-CpC" userLabel="Titolo">
+                                        <rect key="frame" x="-9" y="13" width="285" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cJa-zQ-U7W" userLabel="Luogo">
+                                        <rect key="frame" x="20" y="42" width="244" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yGB-3A-MM8" userLabel="Indirizzo">
+                                        <rect key="frame" x="20" y="71" width="244" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" id="tBV-ss-dQF" userLabel="Citta">
+                                        <rect key="frame" x="20" y="100" width="244" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Xti-xR-hxJ" userLabel="Sito">
+                                        <rect key="frame" x="20" y="129" width="244" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.57002284530000003" green="0.63576390110000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9pI-fe-87T">
+                                        <rect key="frame" x="40" y="158" width="93" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Vai la Sito" backgroundImage="alert_button.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismiss:" destination="CVR-h5-Iyw" eventType="touchUpInside" id="C8n-OA-7Ex"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="2kD-eJ-Hvf" id="9Dp-nt-Dr6"/>
+                        <outlet property="backgroundView" destination="Pao-dy-KJb" id="XkS-Kd-mhE"/>
+                        <outlet property="bkImage" destination="R03-8S-d7e" id="HaJ-RR-ZoS"/>
+                        <outlet property="citta" destination="tBV-ss-dQF" id="mxG-fN-4nF"/>
+                        <outlet property="goToButton" destination="9pI-fe-87T" id="7nK-0U-fIl"/>
+                        <outlet property="indirizzo" destination="yGB-3A-MM8" id="6N8-uJ-6hS"/>
+                        <outlet property="luogo" destination="cJa-zQ-U7W" id="Kua-LN-1hQ"/>
+                        <outlet property="okButton" destination="ieX-m7-Fcc" id="73e-W5-jTr"/>
+                        <outlet property="sito" destination="Xti-xR-hxJ" id="Foo-M1-02y"/>
+                        <outlet property="titolo" destination="yIS-hc-CpC" id="TEM-Yd-Now"/>
+                    </connections>
+                </viewController>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alert_background.png" width="305" height="192"/>
+        <image name="alert_button.png" width="118" height="43"/>
+        <image name="behind_alert_view.png" width="320" height="460"/>
+        <image name="icon_italy.png" width="40" height="30"/>
+        <image name="target.png" width="40" height="40"/>
+    </resources>
+    <classes>
+        <class className="GeoTag" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GeoTag.h"/>
+        </class>
+        <class className="LDAlert" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LDAlert.h"/>
+            <relationships>
+                <relationship kind="action" name="dismiss:"/>
+                <relationship kind="action" name="show:" candidateClass="LdTag"/>
+                <relationship kind="outlet" name="alertView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="bkImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="citta" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="goToButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="indirizzo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="luogo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="me" candidateClass="LDAlert"/>
+                <relationship kind="outlet" name="okButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sito" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titolo" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LdTag" superclassName="GeoTag">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LdTag.h"/>
+        </class>
+        <class className="LinuxDayOSMViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LinuxDayOSMViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeButtonPressed:"/>
+                <relationship kind="action" name="changeButtonReleased:"/>
+                <relationship kind="action" name="goToCurrentLocation:"/>
+                <relationship kind="action" name="handlePanGesture:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="handlePinchGesture:" candidateClass="UIGestureRecognizer"/>
+                <relationship kind="action" name="handleSingleTap:" candidateClass="UIGestureRecognizer"/>
+                <relationship kind="action" name="resetView:"/>
+                <relationship kind="action" name="sliderValueChanged:"/>
+                <relationship kind="outlet" name="osmBrowser" candidateClass="OSMBrowser"/>
+                <relationship kind="outlet" name="zoom" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="OSMBrowser" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSMBrowser.h"/>
+            <relationships>
+                <relationship kind="outlet" name="zoom" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
