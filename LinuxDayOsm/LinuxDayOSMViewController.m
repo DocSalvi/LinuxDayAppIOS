@@ -54,6 +54,8 @@
 
 #define baseZoom        12
 
+#define DATAURL         @"http://www.linuxday.it/2011/data/"
+
 #define CSVTitles       @"\"Organizzatore\",\"Luogo\",\"Indirizzo\",\"Città\",\"Provincia\",\"Sito Web\",\"Longitudine\",\"Latitudine\""
 #define LugManCSV       @"\"Associazione Culturale LugMAN (Linux Users Group MANtova)\",\"Istituto Superiore E. Fermi\",\"Strada Spolverina, 5\",\"Mantova\",\"MN\",\"http://www.lugman.net/mediawiki/index.php?title=Linux_day\",\"GEOMETRYCOLLECTION(POINT(10.76773 45.13915))\""
 
@@ -83,7 +85,7 @@
     NSError *error;
     GeoTag *taglist = NULL;
     UIImage *tagImage = [UIImage imageNamed:@"ld_mark.png"];
-    NSString *table = [ [NSString alloc ] initWithContentsOfURL: [NSURL URLWithString:@"http://www.linuxday.it/2011/data/"] usedEncoding:&encoding error:&error];
+    NSString *table = [ [NSString alloc ] initWithContentsOfURL: [NSURL URLWithString:DATAURL] usedEncoding:&encoding error:&error];
     NSArray *lines = [ table componentsSeparatedByString: @"\n"];
     // printf ("File letto (%d linee): %s\n", [lines count ], [ table UTF8String ]);
     NSMutableArray *titles = csvParser ((NSString*) [ lines objectAtIndex: 0 ]);
