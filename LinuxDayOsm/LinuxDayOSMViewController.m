@@ -54,6 +54,7 @@
 
 #define baseZoom        12
 
+// Spostato l'URL della sorgente dati in una costante
 #define DATAURL         @"http://www.linuxday.it/2011/data/"
 
 #define CSVTitles       @"\"Organizzatore\",\"Luogo\",\"Indirizzo\",\"Città\",\"Provincia\",\"Sito Web\",\"Longitudine\",\"Latitudine\""
